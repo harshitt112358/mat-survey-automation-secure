@@ -10,11 +10,11 @@ from datetime import datetime
 # ──────────────────────────────
 def require_login():
 
-    # Initialize session state on first load
+    # Initialize session state
     if "authenticated" not in st.session_state:
         st.session_state.authenticated = False
 
-    # If not yet authenticated, show password input
+    # If not authenticated, show password screen
     if not st.session_state.authenticated:
         st.markdown("### 🔐 Secure Access")
         password = st.text_input("Enter app password", type="password")
@@ -22,11 +22,11 @@ def require_login():
         if password == st.secrets["app_password"]:
             st.session_state.authenticated = True
             st.success("✅ Access granted. Reloading...")
-            st.experimental_rerun()
+            st.rerun()  # <- updated here
         elif password:
             st.error("❌ Incorrect password")
-        
-        st.stop()
+
+        st.stop()  # Prevent rest of app from showing
 
 require_login()
 
