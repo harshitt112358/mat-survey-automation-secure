@@ -16,7 +16,7 @@ def require_login():
 
     # If not authenticated, show password screen
     if not st.session_state.authenticated:
-        st.markdown("### 🔐 Secure Access")
+        st.markdown("### 🔐 Secured Access")
         password = st.text_input("Enter app password", type="password")
 
         if password == st.secrets["app_password"]:
