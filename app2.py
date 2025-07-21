@@ -30,8 +30,10 @@ with col2:
 
 st.markdown(
     """
-Upload an **Excel file** (with a sheet named `Sheet1`) and a base **.qsf** file.  
-Click **“Generate Updated QSF”** to apply edits and download the result.
+**Instructions**
+
+1) Upload the **Excel** and base **QSF** file.  
+2) Click **“Generate Updated QSF”** to apply edits and download the result.
 """
 )
 
