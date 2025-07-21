@@ -24,7 +24,7 @@ st.set_page_config(page_title="MAT Survey Automation Tool", layout="centered")
 
 col1, col2 = st.columns([1, 4], gap="small")
 with col1:
-    st.image("bain_logo_hd.png", width=140)
+    st.image("bain_logo.png", width=140)
 with col2:
     st.markdown("## 📝 MAT Survey Automation Tool")
 
