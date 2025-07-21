@@ -9,10 +9,23 @@ from datetime import datetime
 # 🔐 PASSWORD PROTECTION
 # ──────────────────────────────
 def require_login():
-    st.markdown("### 🔐 Secured Access")
-    password = st.text_input("Enter app password", type="password")
-    if password != st.secrets["app_password"]:
-        st.error("Incorrect password")
+
+    # Initialize session state on first load
+    if "authenticated" not in st.session_state:
+        st.session_state.authenticated = False
+
+    # If not yet authenticated, show password input
+    if not st.session_state.authenticated:
+        st.markdown("### 🔐 Secure Access")
+        password = st.text_input("Enter app password", type="password")
+
+        if password == st.secrets["app_password"]:
+            st.session_state.authenticated = True
+            st.success("✅ Access granted. Reloading...")
+            st.experimental_rerun()
+        elif password:
+            st.error("❌ Incorrect password")
+        
         st.stop()
 
 require_login()
