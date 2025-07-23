@@ -42,7 +42,7 @@ st.markdown(
     """
 **Instructions**
 
-1) Upload an **Excel file** and a **base QSF** file.  
+1) Uploaddd an **Excel file** and a **base QSF** file.  
 2) Click **“Generate Updated QSF”** to apply edits and download the result.
 """
 )
